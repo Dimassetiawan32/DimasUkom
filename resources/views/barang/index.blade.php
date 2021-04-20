@@ -24,15 +24,23 @@
                     </thead>
                     <tbody>
                          <tr>
-                            <td>fas</td>
-                            <td>dsada</td>
-                            <td>dfsf</td>
-                            <td>fdsfs</td>
-                            <td>fsda</td>
+                         @forelse($stockbarangs as $stockbarang)
+                            <td>{{$stockbarang->kode_barang}}</td>
+                            <td>{{$stockbarang->suplier->nama}}</td>
+                            <td>{{$stockbarang->nama}}</td>
+                            <td>{{$stockbarang->suplier->phone}}</td>
+                            <td>{{$stockbarang->quantity}}</td>
                             <td>
                                 <a href="{{route('barang.create')}}" class="btn btn-success btn-sm">Buat Request</a>
                             </td>
                         </tr>
+                         @empty
+                                <tr>
+                                    <td colspan="4" class="text-center">
+                                        Maaf Data Belum Tersedia.
+                                    </td>
+                                </tr>
+                        @endforelse
                     </tbody>
                 </table>
             </div>

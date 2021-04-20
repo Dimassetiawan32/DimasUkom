@@ -64,12 +64,6 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="">Jumlah Stock</label>
-                                        <input type="text" name="nama" class="form-control" id="">
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
                                         <label for="">Jumlah Permintaan</label>
                                         <input type="text" name="nama" class="form-control" id="">
                                     </div>
