@@ -1,23 +1,32 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Riquest;
+use App\Stock;
 use Illuminate\Http\Request;
 
 class RequestController extends Controller
 {
     public function index()
     {
-        return view('request.index');
+        $stockbarangs = Stock::all();
+        $requests = Riquest::all();
+        return view('request.index',compact('stockbarangs', 'requests'));
     }
 
     public function accept()
     {
-        return view('request.accept');
+        $stockbarangs = Stock::all();
+        $requests = Riquest::all();
+        return view('request.accept',compact('stockbarangs', 'requests'));
     }
 
     public function reject()
     {
-        return view('request.reject');
+        $stockbarangs = Stock::all();
+        $requests = Riquest::all();
+        return view('request.reject',compact('stockbarangs', 'requests'));
     }
+
+   
 }

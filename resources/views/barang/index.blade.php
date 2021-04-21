@@ -31,12 +31,12 @@
                             <td>{{$stockbarang->suplier->phone}}</td>
                             <td>{{$stockbarang->quantity}}</td>
                             <td>
-                                <a href="{{route('barang.create')}}" class="btn btn-success btn-sm">Buat Request</a>
+                                <a href="{{route('barang.create', $stockbarang->id)}}" class="btn btn-success btn-sm">Buat Request</a>
                             </td>
                         </tr>
                          @empty
                                 <tr>
-                                    <td colspan="4" class="text-center">
+                                    <td colspan="6" class="text-center">
                                         Maaf Data Belum Tersedia.
                                     </td>
                                 </tr>

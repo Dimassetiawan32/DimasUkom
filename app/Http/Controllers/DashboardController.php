@@ -9,8 +9,9 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        $stockbarangs = Stock::all();
+        $stockbarangs = Stock::paginate(1);
+        $stockbarangss = Stock::all();
         $supliers = Suplier::all();
-        return view('dashboard.index', compact('supliers', 'stockbarangs'));
+        return view('dashboard.index', compact('supliers', 'stockbarangs', 'stockbarangss'));
     }
 }

@@ -39,7 +39,7 @@
                 <div class="pt-2">
                     <div class="card border-0 shadow">
                         <div class="card-body">
-                            <form action="{{route('stock.update', $stockbarang->id)}}" method="POST">
+                            <form action="{{route('stock.update.quantity', $stockbarang->id)}}" method="POST">
                                @csrf
                                @method('PATCH')
                                 <div class="mb-3 pt-2">
@@ -49,35 +49,33 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="">Kode Barang</label>
-                                            <input type="text" name="kode_barang" class="form-control" value="{{$stockbarang->kode_barang}}" id="">
+                                            <input type="text" name="kode_barang" class="form-control" value="{{$stockbarang->kode_barang}}" id="" readonly>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="">Nama Barang</label>
-                                            <input type="text" name="nama" class="form-control" value="{{$stockbarang->nama}}" id="">
+                                            <input type="text" name="nama" class="form-control" value="{{$stockbarang->nama}}" id="" readonly>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="">Harga</label>
-                                            <input type="text" name="harga" class="form-control" value="{{$stockbarang->harga}}" id="">
+                                            <input type="text" name="harga" class="form-control" value="{{$stockbarang->harga}}" id="" readonly>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="">Suplier</label>
-                                             <select name="suplier_id" id="" class="form-control">
-                                                @foreach($suplier as $suplier)
-                                                    <option value="{{$suplier->id}}">{{$suplier->nama}}</option>
-                                                @endforeach
-                                            </select>
+                                            @foreach($suplier as $suplier)
+                                                <input type="text" name="suplier_id" class="form-control" value="{{$suplier->nama}}" id="" readonly>
+                                            @endforeach
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="">Quantity</label>
-                                            <input type="text" name="quantity" class="form-control" value="{{$stockbarang->quantity}}" id="" readonly>
+                                            <input type="text" name="quantity" class="form-control" id="">
                                         </div>
                                     </div>
 

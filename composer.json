@@ -14,7 +14,9 @@
         "laravel/framework": "5.7.*",
         "laravel/tinker": "^1.0",
         "realrashid/sweet-alert": "^3.2",
-        "spatie/laravel-permission": "^2.1"
+        "spatie/laravel-permission": "^2.1",
+        "nexmo/client-core": "^2.6",
+        "nexmo/laravel": "^2.3"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",

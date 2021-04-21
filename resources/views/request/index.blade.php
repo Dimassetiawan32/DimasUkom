@@ -7,7 +7,10 @@
             <h4 class="sticky-xl-top fw-bold pt-3 pt-xl-5 pb-2 pb-xl-3 text-center">suplier</h4>
             <article>
                 <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2 text-center">
-                    <img src="{{asset('images/taylor.jpg')}}" class="rounded-circle"  width="80px" height="80" alt="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="80px" height="80px" fill="black" class="bi bi-person-circle" viewBox="0 0 16 16">
+                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                    </svg>
                     <p class="font-weight-bold text-center pt-2">Tailor Otwel</p>
                 </div>
                 <p class="text-muted text-center" style="margin-top:-15px;">tayloretwel@gmail.com
@@ -67,43 +70,55 @@
            </div>
        </div>
        <div class="container">
-           <div class="pt-5">
-               <div class="col-md-12">
-                   <h3 class="text-primary font-weight-bold">
-                       Request
-                   </h3>
-                   <a href="{{route('request.accept')}}" class="btn btn-success btn-sm">Accept</a>
-                   <a href="{{route('request.reject')}}" class="btn btn-danger btn-sm">Reject</a>
-               </div>
-               <hr>
-               <div class="container">
-                   <div class="pt-2">
-                       <table class="table table-striped table-bordered table-hover">
-                           <thead class="table-primary">
-                               <tr>
-                                   <th>Kode request</th>
-                                   <th>Kode Barang</th>
-                                   <th>Quantity</th>
-                                   <th>Status</th>
-                                   <th>Option</th>
-                               </tr>
-                           </thead>
-                           <tbody>
+            <div class="pt-5">
+                <div class="col-md-12">
+                    <h3 class="text-primary font-weight-bold">
+                        Request
+                    </h3>
+                    <a href="{{route('request.accept')}}" class="btn btn-success btn-sm">Accept</a>
+                    <a href="{{route('request.reject')}}" class="btn btn-danger btn-sm">Reject</a>
+                </div>
+                <hr>
+                <div class="container">
+                    <div class="pt-2">
+                        <table class="table table-striped table-bordered table-hover">
+                            <thead class="table-primary">
                                 <tr>
-                                   <td>fas</td>
-                                   <td>dsada</td>
-                                   <td>dfsf</td>
-                                   <td>fdsfs</td>
-                                   <td>
-                                      <a href="" class="btn btn-primary btn-sm">Detail</a>
-                                   </td>
-                               </tr>
-                           </tbody>
-                       </table>
-                   </div>
-               </div>
-           </div>
-       </div>
+                                    <th>Kode request</th>
+                                    <th>Kode Barang</th>
+                                    <th>Quantity</th>
+                                    <th>Status</th>
+                                    <th>Option</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            @forelse($requests as $request)
+                                <tr>
+                                    <td>{{$request->kode_request}}</td>
+                                    @foreach($stockbarangs as $stockbarang)
+                                    <td>{{$stockbarang->kode_barang}}</td>
+                                    @endforeach
+                                    <td>{{$request->jumlah}}</td>
+                                    <td>
+                                        <span class="badge badge-secondary">Waiting</span>
+                                    </td>
+                                    <td>
+                                        <a href="" class="btn btn-primary btn-sm">Detail</a>
+                                    </td>
+                                </tr>
+                                @empty
+                                    <tr>
+                                        <td colspan="5" class="text-center">
+                                            Maaf Data Belum Tersedia. 
+                                        </td>
+                                    </tr>
+                            @endforelse
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 @endsection

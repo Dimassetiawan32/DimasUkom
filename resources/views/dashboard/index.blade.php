@@ -9,7 +9,10 @@
             <h4 class="sticky-xl-top fw-bold pt-3 pt-xl-5 pb-2 pb-xl-3 text-center">Admin</h4>
             <article>
                 <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2 text-center">
-                    <img src="{{asset('images/download.jpg')}}" class="rounded-circle" height="80" width="80px" alt="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="80px" height="80px" fill="black" class="bi bi-person-circle" viewBox="0 0 16 16">
+                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                    </svg>
                     <p class="font-weight-bold text-center pt-2">SteveJobs</p>
                 </div>
                 <p class="text-muted text-center" style="margin-top:-15px;">stevejobs@gmail.com
@@ -124,7 +127,10 @@
             <h4 class="sticky-xl-top fw-bold pt-3 pt-xl-5 pb-2 pb-xl-3 text-center">Admin Gudang</h4>
             <article>
                 <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2 text-center">
-                    <img src="{{asset('images/download.jpg')}}" class="rounded-circle" height="80" width="80px" alt="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="80px" height="80px" fill="black" class="bi bi-person-circle" viewBox="0 0 16 16">
+                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                    </svg>
                     <p class="font-weight-bold text-center pt-2">SteveJobs</p>
                 </div>
                 <p class="text-muted text-center" style="margin-top:-15px;">stevejobs@gmail.com
@@ -155,7 +161,7 @@
                                 <h5 class="text-muted pt-2">Stock barang</h5>
                                 <h2 class="ml-auto">
                                 @foreach($stockbarangs as $stockbarang)
-                                    {{$stockbarang->quantity}}
+                                    {{$stockbarang->quantity + $stockbarang->quantity }}
                                 @endforeach
                                 </h2>
                             </div>
@@ -185,7 +191,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                            @forelse($stockbarangs as $stockbarang)
+                            @forelse($stockbarangss as $stockbarang)
                                 <tr>
                                     <td>{{$stockbarang->kode_barang}}</td>
                                     <td>{{$stockbarang->suplier->nama}}</td>

@@ -27,8 +27,8 @@ class Stock extends Model
         return $this->belongsTo(Suplier::class);
     }
 
-    public function barang()
+    public function riquest()
     {
-        return $this->hasMany(Barang::class);
+        return $this->hasMany(Riquest::class);
     }
 }

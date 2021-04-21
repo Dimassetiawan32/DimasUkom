@@ -42,12 +42,38 @@ class StockController extends Controller
         $stockbarang = Stock::findOrFail($id);
         return view('stock.edit', compact('suplier','stockbarang'));
     }
-
+    
     public function update(Request $request, $id)
     {
         $stockbarangs = Stock::find($id);
         $stockbarangs->update($request->all());
         toast('Barang Berhasil Diperbarui','success');
+        return redirect('stock/index');
+    }
+    
+    public function quantity($id)
+    {
+        $suplier = Suplier::all();
+        $stockbarang = Stock::findOrFail($id);
+        return view('stock.quantity', compact('suplier', 'stockbarang'));
+    }
+
+    public function updateQuantity(Request $request, $id)
+    {
+        $stockbarangs = Stock::find($id);
+        $hitung = $stockbarangs->quantity + $request->quantity;
+        $stockbarangs->update([
+            'quantity' => $hitung,
+        ]);
+        toast('Quantity Berhasil Ditambah','success');
+        return redirect('stock/index');
+    }
+
+    public function destroy($id)
+    {
+        $stockbarang = Stock::find($id);
+        $stockbarang->delete($stockbarang->all());
+        toast('Stock Barang Berhasil Dihapus','success');
         return redirect('stock/index');
     }
 }

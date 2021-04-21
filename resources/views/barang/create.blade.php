@@ -15,13 +15,8 @@
             <div class="pt-2">
                 <div class="card border-0 shadow">
                     <div class="card-body">
-                        <form action="" method="POST">
+                        <form action="{{route('barang.save.request', $stockbarangs->id)}}" method="POST">
                             @csrf
-                            @if(session('success'))
-                                <div class="alert alert-success">
-                                    {{ session('success')}}
-                                </div>
-                            @endif
                             <div class="mb-3 pt-2">
                                 <h5 class="font-weight-bold">Data Pribadi</h5>
                             </div>
@@ -35,19 +30,19 @@
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label for="">Alamat</label>
-                                        <input type="text" name="nama" class="form-control" id="">
+                                        <input type="text" name="alamat" class="form-control" id="">
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label for="">E-mail</label>
-                                        <input type="text" name="nama" class="form-control" id="">
+                                        <input type="text" name="email" class="form-control" id="">
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label for="">Telp</label>
-                                        <input type="text" name="nama" class="form-control" id="">
+                                        <input type="text" name="telp" class="form-control" id="">
                                     </div>
                                 </div>
                             </div>
@@ -59,13 +54,19 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="">Nama Barang</label>
-                                        <input type="text" name="nama" class="form-control" id="">
+                                        <input type="text" name="stockbarang_id" class="form-control" id="" value="{{$stockbarangs->nama}}" readonly>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="">Jumlah Stock</label>
+                                        <input type="text" name="stockbarang_id" class="form-control" id="" value="{{$stockbarangs->quantity}}" readonly>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="">Jumlah Permintaan</label>
-                                        <input type="text" name="nama" class="form-control" id="">
+                                        <input type="text" name="jumlah" class="form-control" id="">
                                     </div>
                                 </div>
                             </div>

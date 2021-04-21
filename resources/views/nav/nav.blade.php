@@ -13,14 +13,12 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
                         <li class="nav-item">
                           <a href="{{route('home')}}" class="nav-link">Home</a>
                         </li>
                         <li class="nav-item">
                           <a href="{{route('barang.index')}}" class="nav-link">Cek Barang</a>
                         </li>
-
                      @if (Route::has('login'))
                      @auth
                         @role('Admin|Gudang')
@@ -37,8 +35,8 @@
                           <a href="{{route('request.index')}}" class="nav-link">Request</a>
                         </li>
                         @endrole
-                    @endauth
-                    @endif
+                      @endauth
+                      @endif
                     </ul>
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">

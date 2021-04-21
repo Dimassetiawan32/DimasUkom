@@ -22,7 +22,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['prefix' => 'barang'], function(){
     Route::get('index', 'BarangController@index')->name('barang.index');
-    Route::get('create', 'BarangController@create')->name('barang.create');
+    Route::get('create/{barang}', 'BarangController@create')->name('barang.create');
+    Route::post('save.request/{barang}', 'BarangController@store')->name('barang.save.request');
 });
 
 Route::group(['prefix' => 'dashboard'], function(){
@@ -35,6 +36,9 @@ Route::group(['prefix' => 'stock'], function(){
     Route::post('save', 'StockController@store')->name('stock.save');
     Route::get('formEdit/{stock}', 'StockController@edit')->name('stock.formEdit');
     Route::patch('update/{stock}', 'StockController@update')->name('stock.update');
+    Route::get('QuantityUp/{stock}', 'StockController@quantity')->name('stock.QuantityUp');
+    Route::patch('update.quantity/{stock}', 'StockController@updateQuantity')->name('stock.update.quantity');
+    Route::delete('delete/{stock}', 'StockController@destroy')->name('stock.delete');
 });
 
 Route::group(['prefix' => 'suplier'], function(){
