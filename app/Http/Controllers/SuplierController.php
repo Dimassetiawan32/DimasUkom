@@ -31,4 +31,12 @@ class SuplierController extends Controller
         toast('Suplier Berhasil Ditambahkan','success');
         return redirect('suplier/index');
     }
+
+    public function rekap($tglawal, $tglakhir)
+    {
+    //    dd(["Tanggal Awal : ".$tglawal, "Tanggal Akhir : ".$tglakhir]);
+       
+        $rekap = Suplier::whereBetween('created_at',[$tglawal, $tglakhir])->get();
+        return view('suplier.rekap',compact('rekap'));
+    }
 }

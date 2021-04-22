@@ -39,18 +39,21 @@ Route::group(['prefix' => 'stock'], function(){
     Route::get('QuantityUp/{stock}', 'StockController@quantity')->name('stock.QuantityUp');
     Route::patch('update.quantity/{stock}', 'StockController@updateQuantity')->name('stock.update.quantity');
     Route::delete('delete/{stock}', 'StockController@destroy')->name('stock.delete');
+    Route::get('rekap/{tglawal}/{tglakhir}', 'StockController@rekap')->name('stock.rekap');
 });
 
 Route::group(['prefix' => 'suplier'], function(){
     Route::get('index', 'SuplierController@index')->name('suplier.index');
     Route::get('create', 'SuplierController@create')->name('suplier.create');
     Route::post('save', 'SuplierController@store')->name('suplier.save');
+    Route::get('rekap/{tglawal}/{tglakhir}', 'SuplierController@rekap')->name('suplier.rekap');
 });
 
 Route::group(['prefix' => 'request'], function(){
     Route::get('index', 'RequestController@index')->name('request.index');
     Route::get('accept', 'RequestController@accept')->name('request.accept');
     Route::get('reject', 'RequestController@reject')->name('request.reject');
+    Route::get('rekap/{tglawal}/{tglakhir}', 'RequestController@rekap')->name('request.rekap');
 });
 
 Route::group(['prefix' => 'member'], function(){

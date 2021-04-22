@@ -115,14 +115,19 @@
                 <h5 class="text-muted">Cari laporan Periode</h5>
                 <div class="form-row pt-2">
                     <div class="form-group col-md-3">
-                        <input type="text" name="" class="form-control" id="">
+                        <input type="date" name="tglawal" class="form-control" id="tglawal">
                     </div>
                     <div class="form-group col-md-3">
-                        <input type="text" name="" class="form-control" id="">
+                        <input type="date" name="tglakhir" class="form-control" id="tglakhir">
                     </div>
                 </div>
-                <a href=""  class="btn btn-primary btn-sm">Cari Laporan</a>
-                <a href="{{route('stock.create')}}"  class="btn btn-success btn-sm">Tambah Stock</a>
+                <div class="form-group">
+                    <a href="" onclick="this.href='rekap/'+ document.getElementById('tglawal').value +
+                    '/' + document.getElementById('tglakhir').value " class="btn btn-primary btn-sm">
+                        Cari Laporan
+                    </a>
+                    <a href="{{route('stock.create')}}"  class="btn btn-success btn-sm">Tambah Stock</a>
+                </div>
             </div>
             <div class="col-md-12">
                 <h3 class="text-primary font-weight-bold">

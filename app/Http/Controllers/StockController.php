@@ -76,4 +76,13 @@ class StockController extends Controller
         toast('Stock Barang Berhasil Dihapus','success');
         return redirect('stock/index');
     }
+
+    public function rekap($tglawal, $tglakhir)
+    {
+        // dd(["Tanggal Awal : ".$tglawal, "Tanggal Akhir : ".$tglakhir]);
+       
+        
+        $rekap = Stock::with('suplier')->whereBetween('created_at',[$tglawal, $tglakhir])->get();
+        return view('stock.rekap',compact('rekap'));
+    }
 }

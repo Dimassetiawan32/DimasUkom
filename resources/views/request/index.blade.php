@@ -95,9 +95,11 @@
                             @forelse($requests as $request)
                                 <tr>
                                     <td>{{$request->kode_request}}</td>
+                                    <td>
                                     @foreach($stockbarangs as $stockbarang)
-                                    <td>{{$stockbarang->kode_barang}}</td>
+                                        {{$stockbarang->kode_barang}}
                                     @endforeach
+                                    </td>
                                     <td>{{$request->jumlah}}</td>
                                     <td>
                                         <span class="badge badge-secondary">Waiting</span>

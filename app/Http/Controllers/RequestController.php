@@ -18,14 +18,14 @@ class RequestController extends Controller
     {
         $stockbarangs = Stock::all();
         $requests = Riquest::all();
-        return view('request.accept',compact('stockbarangs', 'requests'));
+        return view('request.accept.accept',compact('stockbarangs', 'requests'));
     }
 
     public function reject()
     {
         $stockbarangs = Stock::all();
         $requests = Riquest::all();
-        return view('request.reject',compact('stockbarangs', 'requests'));
+        return view('request.reject.reject',compact('stockbarangs', 'requests'));
     }
 
    
